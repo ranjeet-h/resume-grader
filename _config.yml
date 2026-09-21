@@ -1,0 +1,23 @@
+title: Local Resume Matcher
+description: A local-first research toolkit for evaluating resume-to-job matching models.
+markdown: kramdown
+permalink: pretty
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
+exclude:
+  - .env*
+  - .gitignore
+  - .github
+  - cache
+  - coverage
+  - data/raw
+  - data/normalized
+  - node_modules
+  - output
+  - python/.venv
+  - python/__pycache__
+  - tests
+  - vendor

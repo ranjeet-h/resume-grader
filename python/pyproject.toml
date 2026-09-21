@@ -1,0 +1,6 @@
+[project]
+name = "resume-grader-laya-worker"
+version = "0.1.0"
+description = "Local Laya inference worker for the resume matcher"
+requires-python = ">=3.12,<3.13"
+dependencies = ["laya==0.3.4"]

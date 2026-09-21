@@ -1,0 +1,51 @@
+{
+  "name": "laya-resume-matcher",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "packageManager": "pnpm@10.33.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "tsx src/cli.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "verify": "pnpm typecheck && pnpm lint && pnpm test && pnpm build",
+    "laya:smoke": "tsx src/cli.ts laya:smoke",
+    "data:role-radar": "tsx src/cli.ts data:role-radar",
+    "data:ats": "tsx src/cli.ts data:ats",
+    "data:kaggle": "tsx src/cli.ts data:kaggle",
+    "data:vanetik": "tsx src/cli.ts data:vanetik",
+    "benchmark:gold": "tsx src/cli.ts benchmark:gold",
+    "benchmark:vanetik": "tsx src/cli.ts benchmark:vanetik",
+    "benchmark:pdf-sample": "tsx src/cli.ts benchmark:pdf-sample",
+    "benchmark:role-radar": "tsx src/cli.ts benchmark:role-radar",
+    "benchmark:ats": "tsx src/cli.ts benchmark:ats",
+    "benchmark:select-jd": "tsx src/cli.ts benchmark:select-jd",
+    "benchmark:kaggle": "tsx src/cli.ts benchmark:kaggle",
+    "benchmark:stability": "tsx src/cli.ts benchmark:stability",
+    "rank:role-radar": "tsx src/cli.ts rank:role-radar",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:live": "LIVE_TESTS=1 vitest run tests/live",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check src tests",
+    "format": "biome format --write src tests"
+  },
+  "dependencies": {
+    "commander": "^15.0.0",
+    "csv-parse": "^7.0.2",
+    "dotenv": "^18.0.1",
+    "p-limit": "^7.3.3",
+    "pdfjs-dist": "^6.3.289",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.14",
+    "@types/node": "^26.6.2",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.1"
+  }
+}

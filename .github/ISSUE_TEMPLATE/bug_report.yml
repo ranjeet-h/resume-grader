@@ -1,0 +1,46 @@
+name: Bug report
+description: Report a reproducible problem without sharing candidate data.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Do not attach or paste resumes, candidate identifiers tied to people, private job descriptions,
+        local input maps, cache/report archives, API keys, or other personal data. See the privacy guide.
+  - type: input
+    id: version
+    attributes:
+      label: Commit or version
+      description: Include the commit hash or release tag.
+      placeholder: e.g. 1a2b3c4
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Runtime
+      description: OS, CPU/GPU device, Node, Python, pnpm, and uv versions.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Use synthetic data only. Remove paths and identifiers that may reveal private data.
+      placeholder: Steps to reproduce the problem...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Include a redacted error message. Never include resume text or secrets.
+    validations:
+      required: true

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ page.description | default: site.description | escape }}">
+    <meta name="color-scheme" content="light">
+    <title>{{ page.title | escape }} · {{ site.title | escape }}</title>
+    <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
+  </head>
+  <body class="docs-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="docs-header">
+      <a class="wordmark" href="{{ '/' | relative_url }}"><span class="wordmark-mark" aria-hidden="true">LM</span> Local Resume Matcher</a>
+      <nav aria-label="Main navigation">
+        <a href="{{ '/docs/' | relative_url }}">Docs</a>
+        <a href="{{ '/#benchmarks' | relative_url }}">Benchmarks</a>
+        <a href="{{ '/' | relative_url }}">Project site</a>
+      </nav>
+    </header>
+    <main class="docs-main" id="main">
+      <div class="eyebrow">PROJECT DOCUMENTATION</div>
+      <h1>{{ page.title | escape }}</h1>
+      {% if page.description %}<p class="docs-lede">{{ page.description | escape }}</p>{% endif %}
+      <article class="prose">
+        {{ content }}
+      </article>
+    </main>
+    <footer class="docs-footer">
+      <a href="{{ '/' | relative_url }}">Back to the project</a>
+      <span>Local research software · Human review required</span>
+    </footer>
+  </body>
+</html>

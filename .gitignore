@@ -1,0 +1,31 @@
+node_modules/
+dist/
+build/
+_site/
+.jekyll-cache/
+.env
+.env.*
+!.env.example
+.venv/
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Dataset source files and normalized content may contain personal information.
+data/raw/**
+data/normalized/**
+data/fixtures/*
+!data/fixtures/*.json
+!data/raw/**/.gitkeep
+!data/normalized/**/.gitkeep
+
+# Model cache and reports/runs can include resume text or other personal data.
+cache/**
+output/**
+!output/**/.gitkeep
+
+coverage/
+.coverage
+.DS_Store

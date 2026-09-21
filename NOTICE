@@ -1,0 +1,8 @@
+Local Resume Matcher is an independent research project and is not affiliated
+with or endorsed by Convai Innovations, Hugging Face, Kaggle, or the authors of
+the optional benchmark datasets.
+
+The Laya typed-decisions checkpoint is downloaded from the Hugging Face model
+repository identified in docs/model-and-data-licenses.md. Its license and the
+licenses of all downloaded datasets and third-party packages are separate from
+the MIT license for this repository's original code and documentation.

@@ -1,0 +1,122 @@
+---
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A local-first research toolkit for testing resume-to-job matching with a small typed-decision model, transparent reports, and human review.">
+    <meta name="theme-color" content="#f5f5f0">
+    <meta property="og:title" content="Local Resume Matcher">
+    <meta property="og:description" content="Explore resume-to-job matching locally. Inspect the rubric, compare ranking behavior, and keep candidate text on your machine.">
+    <meta property="og:type" content="website">
+    <title>Local Resume Matcher · inspect the match, keep the human in the loop</title>
+    <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="{{ '/' | relative_url }}"><span class="wordmark-mark" aria-hidden="true">LM</span> Local Resume Matcher</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#how-it-works">How it works</a>
+        <a href="#benchmarks">Benchmarks</a>
+        <a href="{{ '/docs/' | relative_url }}">Documentation</a>
+        <a class="nav-cta" href="{{ '/docs/quickstart/' | relative_url }}">Get started</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div>
+          <div class="eyebrow">LOCAL-FIRST MATCHING RESEARCH</div>
+          <h1 id="hero-title">Look closer at every match.</h1>
+          <p class="hero-copy">A practical toolkit for comparing resumes with one job description, checking the scoring behavior, and seeing where a small model still falls short.</p>
+          <div class="hero-actions">
+            <a class="button" href="{{ '/docs/quickstart/' | relative_url }}">Run it locally <span aria-hidden="true">&nbsp;→</span></a>
+            <a class="button secondary" href="{{ '/docs/benchmark-methodology/' | relative_url }}">Read the results</a>
+          </div>
+          <p class="hero-note"><b aria-hidden="true"></b><span><strong>Research software, not a hiring decision system.</strong> Current matching scores are experimental and are not validated to select or reject candidates.</span></p>
+        </div>
+
+        <aside class="report-window" aria-label="Summary of the public benchmark sample">
+          <div class="window-top"><span>Local benchmark / sample 01</span><span class="status">Completed</span></div>
+          <h2>Ranking behavior, made visible.</h2>
+          <p class="window-caption">Vanetik/Kogan public human-ranking sample</p>
+          <div class="metric-row">
+            <div class="metric"><strong>30</strong><span>anonymized resumes</span></div>
+            <div class="metric"><strong>5</strong><span>software vacancies</span></div>
+            <div class="metric"><strong>150</strong><span>local evaluations</span></div>
+          </div>
+          <div class="window-foot">Human labels rank vacancies for each resume, not candidates for one job. The benchmark reports this mismatch and compares Laya with BM25 instead of presenting it as hiring accuracy.</div>
+        </aside>
+      </section>
+
+      <section class="section" id="how-it-works" aria-labelledby="how-title">
+        <div class="wrap">
+          <div class="section-head">
+            <div><div class="eyebrow">SMALL INTERFACE, FULL AUDIT TRAIL</div><h2 id="how-title">A local tool you can inspect and replace.</h2></div>
+            <p>Use the CLI with your own PDFs or text files, or reproduce the included dataset experiments. Each output includes the rubric score, dimensions, model revision, runtime details, and a ranking export.</p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature"><span class="feature-index">01 / MODEL</span><h3>Typed decisions</h3><p>Ask a fixed set of job-related questions through a compact, non-generative Laya checkpoint.</p></article>
+            <article class="feature"><span class="feature-index">02 / INPUT</span><h3>Full resume passes</h3><p>Extract PDF text locally and score overlapping windows when a resume exceeds the model context.</p></article>
+            <article class="feature"><span class="feature-index">03 / EVIDENCE</span><h3>Compare with a baseline</h3><p>Use benchmark adapters, human labels where available, and a transparent BM25 comparison.</p></article>
+            <article class="feature"><span class="feature-index">04 / CONTROL</span><h3>Keep inference local</h3><p>No hosted inference provider is configured. Model weights download from Hugging Face and run on your machine.</p></article>
+          </div>
+          <div class="flow" aria-label="Matching workflow">
+            <div class="flow-step"><span>STEP 01</span>Choose one job description</div>
+            <div class="flow-step"><span>STEP 02</span>Load local PDF or TXT files</div>
+            <div class="flow-step"><span>STEP 03</span>Review a no-model dry run</div>
+            <div class="flow-step"><span>STEP 04</span>Score with the local checkpoint</div>
+            <div class="flow-step"><span>STEP 05</span>Inspect rankings and score dimensions</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="benchmarks" aria-labelledby="bench-title">
+        <div class="wrap bench-layout">
+          <div>
+            <div class="eyebrow">QUALITY BEFORE SCALE</div>
+            <h2 id="bench-title">The benchmark is allowed to say “not yet.”</h2>
+            <p class="bench-copy">On the 30-resume sample, human reviewers agreed with each other on vacancy order only <strong>56.3%</strong> of the time. Laya’s average pairwise agreement with their mean ranks was <strong>53.2%</strong>; the simple BM25 baseline reached <strong>58.2%</strong>.</p>
+            <p class="bench-copy">These labels test a different task from ranking many candidates for one job. That gap is documented instead of being hidden behind a match percentage.</p>
+            <a class="button secondary" href="{{ '/docs/benchmark-methodology/' | relative_url }}">See methodology and caveats</a>
+          </div>
+          <div>
+            <div class="metric-table" role="table" aria-label="Pairwise agreement with mean human ranking">
+              <div class="metric-table-row" role="row"><span role="columnheader">Ranking method</span><span role="columnheader">Pairwise</span><span role="columnheader">Spearman</span></div>
+              <div class="metric-table-row" role="row"><span role="cell">Laya local scorer</span><span role="cell">53.2%</span><span role="cell">0.078</span></div>
+              <div class="metric-table-row" role="row"><span role="cell">BM25 lexical baseline</span><span role="cell">58.2%</span><span role="cell">0.220</span></div>
+              <div class="metric-table-row" role="row"><span role="cell">Human annotator agreement</span><span role="cell">56.3%</span><span role="cell">—</span></div>
+            </div>
+            <p class="caveat"><strong>Interpretation:</strong> this small, noisy dataset does not demonstrate that Laya is better than a lexical baseline. The 0–100 output is a rubric score, not a calibrated probability or hiring recommendation.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="docs-title">
+        <div class="wrap docs-band">
+          <div>
+            <div class="eyebrow">OPEN RESEARCH TOOLKIT</div>
+            <h2 id="docs-title">Start with the limits. Then run a sample.</h2>
+            <p>Install requirements, prepare a JSON job description and a folder of resumes, inspect the dry run, and decide whether this local experiment fits your evaluation work.</p>
+          </div>
+          <nav class="doc-links" aria-label="Project documentation">
+            <a href="{{ '/docs/' | relative_url }}">Documentation overview</a>
+            <a href="{{ '/docs/quickstart/' | relative_url }}">Quick start and custom matching</a>
+            <a href="{{ '/docs/benchmark-methodology/' | relative_url }}">Benchmark methodology</a>
+            <a href="{{ '/docs/privacy-and-safety/' | relative_url }}">Privacy and safe use</a>
+            <a href="{{ '/docs/model-and-data-licenses/' | relative_url }}">Model and data licenses</a>
+            <a href="{{ '/docs/providers/' | relative_url }}">Provider architecture</a>
+            <a href="{{ '/docs/site-publishing/' | relative_url }}">Publish the project site</a>
+          </nav>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer wrap">
+      <span>Local Resume Matcher · independent research project</span>
+      <span>Scores support inspection only. <a href="{{ '/docs/privacy-and-safety/' | relative_url }}">Read privacy and safe-use guidance.</a></span>
+    </footer>
+  </body>
+</html>
