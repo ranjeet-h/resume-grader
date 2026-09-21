@@ -21,6 +21,7 @@
         <a href="#how-it-works">How it works</a>
         <a href="#benchmarks">Benchmarks</a>
         <a href="{{ '/docs/' | relative_url }}">Documentation</a>
+        <a href="https://github.com/ranjeet-h/resume-grader">GitHub</a>
         <a class="nav-cta" href="{{ '/docs/quickstart/' | relative_url }}">Get started</a>
       </nav>
     </header>
@@ -58,7 +59,7 @@
             <p>Use the CLI with your own PDFs or text files, or reproduce the included dataset experiments. Each output includes the rubric score, dimensions, model revision, runtime details, and a ranking export.</p>
           </div>
           <div class="feature-grid">
-            <article class="feature"><span class="feature-index">01 / MODEL</span><h3>Typed decisions</h3><p>Ask a fixed set of job-related questions through a compact, non-generative Laya checkpoint.</p></article>
+            <article class="feature"><span class="feature-index">01 / MODEL</span><h3>Swap local backends</h3><p>Start with Laya or plug in a local MLX, ONNX Runtime, or other evaluator without replacing the ranking pipeline.</p></article>
             <article class="feature"><span class="feature-index">02 / INPUT</span><h3>Full resume passes</h3><p>Extract PDF text locally and score overlapping windows when a resume exceeds the model context.</p></article>
             <article class="feature"><span class="feature-index">03 / EVIDENCE</span><h3>Compare with a baseline</h3><p>Use benchmark adapters, human labels where available, and a transparent BM25 comparison.</p></article>
             <article class="feature"><span class="feature-index">04 / CONTROL</span><h3>Keep inference local</h3><p>No hosted inference provider is configured. Model weights download from Hugging Face and run on your machine.</p></article>

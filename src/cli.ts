@@ -33,7 +33,7 @@ import { runBatch } from './pipeline/batch-runner.js';
 import { EvaluationCache } from './pipeline/cache.js';
 import { classifyError } from './providers/errors.js';
 import type { CandidateEvaluator } from './providers/evaluator.js';
-import { createLocalLayaEvaluator } from './providers/laya-local.js';
+import { createCandidateEvaluator } from './providers/factory.js';
 import {
   projectModelPreflight,
   REQUIRED_MODEL_PREFLIGHT_SIZE,
@@ -974,7 +974,7 @@ type ExecuteBatchInput = {
 
 async function executeBatch(input: ExecuteBatchInput): Promise<BatchRunResult> {
   await ensureOutputDirectories(config);
-  const evaluator = await createLocalLayaEvaluator(config);
+  const evaluator = await createCandidateEvaluator(config);
   try {
     return await executeBatchWithEvaluator(input, evaluator);
   } finally {

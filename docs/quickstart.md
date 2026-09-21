@@ -7,7 +7,7 @@ permalink: /docs/quickstart/
 
 ## What this runs
 
-The CLI evaluates each resume against one job using the pinned `convaiinnovations/laya:typed-decisions` checkpoint. TypeScript computes a weighted 0–100 rubric score from four typed dimensions and a must-have probability. The score is **not** a match probability. All inference runs on the local machine; the first model run downloads weights from Hugging Face.
+By default, the CLI evaluates each resume against one job using the pinned `convaiinnovations/laya:typed-decisions` checkpoint. You can select another local model through the [evaluator adapter interface](providers.md). TypeScript computes a weighted 0–100 rubric score from four typed dimensions and a must-have probability. The score is **not** a match probability. The built-in model runs locally; its first run downloads weights from Hugging Face.
 
 This is an experimental research tool. Do not use its rankings to make or automate hiring decisions. See [privacy and safe use](privacy-and-safety.md) before supplying candidate data.
 

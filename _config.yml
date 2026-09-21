@@ -1,5 +1,7 @@
 title: Local Resume Matcher
 description: A local-first research toolkit for evaluating resume-to-job matching models.
+url: https://ranjeet-h.github.io
+baseurl: /resume-grader
 markdown: kramdown
 permalink: pretty
 plugins:

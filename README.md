@@ -4,11 +4,12 @@
 
 > **Research software, not a hiring decision system.** Current scores are experimental rubric scores, not calibrated probabilities or recommendations. Do not use them to select, reject, or rank real candidates for employment decisions.
 
-[Project site](index.html) · [Documentation](docs/index.md) · [Quick start](docs/quickstart.md) · [Benchmark methodology](docs/benchmark-methodology.md) · [Privacy and safe use](docs/privacy-and-safety.md)
+[Project site](https://ranjeet-h.github.io/resume-grader/) · [Documentation](docs/index.md) · [Quick start](docs/quickstart.md) · [Benchmark methodology](docs/benchmark-methodology.md) · [Privacy and safe use](docs/privacy-and-safety.md)
 
 ## What it does
 
 - Runs Convai Innovations' `convaiinnovations/laya:typed-decisions` locally through a replaceable TypeScript `CandidateEvaluator` and a Python worker managed by `uv`.
+- Lets users plug in a trusted local model adapter through `SCORING_ADAPTER_MODULE`; MLX, ONNX Runtime, and other model backends can share the same ranking and report pipeline.
 - Uses PyTorch MPS on Apple Silicon when available and falls back to CPU on other machines.
 - Accepts local PDF and UTF-8 TXT files for one job description through `match`.
 - Parses PDF text locally, chunks long resumes to fit the model context, and exports anonymous candidate IDs, ranked scores, runtime metadata, and reports.
@@ -75,6 +76,7 @@ pnpm exec tsx src/cli.ts laya:smoke --count 10
 - [Privacy and safe use](docs/privacy-and-safety.md)
 - [Benchmark methodology](docs/benchmark-methodology.md)
 - [Provider architecture](docs/providers.md)
+- [Custom local model adapter template](examples/evaluator-plugin.mjs)
 - [Model and data licenses](docs/model-and-data-licenses.md)
 - [Implementation and historical results](IMPLEMENTATION.md)
 - [Original PoC plan](laya-resume-matching-poc-implementation.md)

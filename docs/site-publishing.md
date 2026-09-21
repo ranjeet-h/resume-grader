@@ -5,17 +5,16 @@ description: Enable GitHub Pages for the static marketing and documentation site
 permalink: /docs/site-publishing/
 ---
 
-The project site is a static HTML/Jekyll site in this repository. The Pages workflow builds the root landing page, CSS, and Markdown documentation; it does not access resume inputs, cache, or benchmark outputs.
+The project site is a static HTML/Jekyll site in this repository. The Pages workflow builds the root landing page, CSS, and Markdown documentation; it does not access resume inputs, cache, or benchmark outputs. Its project-site base path is set to `/resume-grader`.
 
 ## Enable GitHub Pages
 
-1. Push the reviewed source to a GitHub repository using `main` or `master` as the default branch.
-2. In **Settings → Pages → Build and deployment**, choose **GitHub Actions** as the source.
-3. Confirm the repository's Actions settings permit the Pages workflow to run.
-4. Push to the default branch or run **Publish project site** manually from the Actions tab.
-5. Review the `github-pages` environment deployment URL and open the site at mobile and desktop widths. Confirm the docs links and `baseurl` paths work for the repository site.
+1. In **Settings → Pages → Build and deployment**, choose **GitHub Actions** as the source if it is not already selected.
+2. Confirm repository Actions settings permit the Pages workflow to run.
+3. Push to `main` or `master`, or run **Publish project site** manually from the Actions tab.
+4. Open `https://ranjeet-h.github.io/resume-grader/` and confirm the docs links and asset paths work.
 
-No deployment has been performed from this local checkout. There is no configured Git remote or existing commit history here. The workflow is ready for the repository owner to run after creating or connecting the public repository and enabling Pages.
+The repo's Pages workflow deploys each successful default-branch push. GitHub Pages can take a few minutes to publish the first deployment.
 
 ## Before you announce it
 

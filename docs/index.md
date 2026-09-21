@@ -11,7 +11,7 @@ This repository is a local-first **research toolkit** for studying resume-to-job
 
 - [Quick start](quickstart.md) — install the runtimes, prepare a job JSON file and local PDF/TXT resumes, run a dry run, then export a ranking.
 - [Privacy and safe use](privacy-and-safety.md) — learn what stays local, what gets written to disk, what redaction misses, and how to clear outputs.
-- [Provider architecture](providers.md) — understand the replaceable evaluator seam and the current local Laya adapter.
+- [Provider architecture](providers.md) — select the built-in local model or add an MLX, ONNX Runtime, or other local evaluator adapter.
 - [Publish the project site](site-publishing.md) — enable the GitHub Pages deployment after connecting the public repository.
 
 ## Evaluate the method
