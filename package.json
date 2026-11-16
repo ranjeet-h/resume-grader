@@ -34,12 +34,12 @@
     "format": "biome format --write src tests"
   },
   "dependencies": {
-    "commander": "^15.0.0",
-    "csv-parse": "^7.0.2",
-    "dotenv": "^18.0.1",
+    "commander": "^15.1.0",
+    "csv-parse": "^7.0.3",
+    "dotenv": "^18.0.10",
     "p-limit": "^7.3.3",
-    "pdfjs-dist": "^6.3.289",
-    "zod": "^4.6.5"
+    "pdfjs-dist": "^6.5.438",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.5.14",
